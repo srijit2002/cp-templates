@@ -1,11 +1,17 @@
-ll binExp(ll a,ll b,ll M){
-    ll result =1;
-    while(b>0){
-        if(b&1){
-            result=(result*a*1LL)%M;
+ll binExp(ll a, ll n, ll d) {
+    ll res = 1;
+
+    while (n) {
+        if (n % 2 == 1) {
+            res = ((res % d) * (a % d)) % d;
+            n--;
         }
-        a=(a*1LL*a)%M;
-        b>>=1;
+
+        else {
+            a = ((a % d) * (a % d)) % d;
+            n /= 2;
+        }
     }
-    return result;
+
+    return res;
 }
