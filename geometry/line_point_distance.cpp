@@ -33,5 +33,5 @@ ld line_point_distance(vector<ll>line,pair<ll,ll>point){
    */
     ld up=abs(a*x+b*y-c)*1.0;
     ld down=sqrt(a*a*1.0+b*b*1.0);
-    return up/down;
+    return fabs(up/down);
 }

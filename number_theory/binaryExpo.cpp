@@ -1,17 +1,15 @@
-ll binExp(ll a, ll n, ll d) {
+#define ll long long int
+ll binExp(ll base, ll power, ll MOD) {
     ll res = 1;
-
-    while (n) {
-        if (n % 2 == 1) {
-            res = ((res % d) * (a % d)) % d;
-            n--;
+    while (power) {
+        if (power % 2 == 1) {
+            res = ((res % MOD) * (base % MOD)) % MOD;
+            power--;
         }
-
         else {
-            a = ((a % d) * (a % d)) % d;
-            n /= 2;
+            base = ((base % MOD) * (base % MOD)) % MOD;
+            power /= 2;
         }
     }
-
     return res;
 }

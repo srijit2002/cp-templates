@@ -1,5 +1,5 @@
 /*
-Don't forget to use ws(cin) before getline
+Don't forget to use cin.ignore() before getline
 */
 vector<ll> tokenize(string s, string del = " ") {
     ll start = 0;

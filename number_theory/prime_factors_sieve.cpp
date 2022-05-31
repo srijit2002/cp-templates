@@ -1,5 +1,5 @@
 /**
-    @brief sieve function for getting  prime factorization in o(loglogn)
+    @brief sieve function for getting  prime factorization in o(nloglogn)
 */
 vector<ll> sieve_prime_factor;
 void sieve_prime(ll MAXN = 1e7) {
