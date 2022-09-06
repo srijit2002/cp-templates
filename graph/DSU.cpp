@@ -14,7 +14,7 @@ public:
             return v;
         return parent[v] = find_parent(parent[v]);
     }
-    void Union(ll a, ll b) {
+    bool Union(ll a, ll b) {
         a = find_parent(a);
         b = find_parent(b);
         if (a != b) {
@@ -22,6 +22,8 @@ public:
                 swap(a, b);
             parent[b] = a;
             size[a] += size[b];
+            return true;
         }
+        return false;
     }
 };

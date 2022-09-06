@@ -129,10 +129,3 @@ int main() {
 void solve(ll TC) {
     
 }
-
-/*
- read question
- rethink your approach
- dont put --> n <-- in every for loop
- consider case = 0
-*/

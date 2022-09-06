@@ -4,21 +4,24 @@
 
 
 
-ll power(ll x,ll y, ll p) {
+ll binExp(ll base, ll power, ll MOD) {
     ll res = 1;
-    x = x % p;
-    while (y > 0) {
-        if (y & 1)
-            res = (res * x) % p;
-        y = y >> 1;
-        x = (x * x) % p;
+    while (power) {
+        if ((power % 2) == 1) {
+            res = ((res % MOD) * (base % MOD)) % MOD;
+            power--;
+        }
+        else {
+            base = ((base % MOD) * (base % MOD)) % MOD;
+            power /= 2;
+        }
     }
     return res;
 }
 
 
 ll modInverse(ll n,ll p) {
-    return power(n, p - 2, p);
+    return binExp(n, p - 2, p);
 }
 /**
  * @brief returns nCr % p using fermat's little theorem

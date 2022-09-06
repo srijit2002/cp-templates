@@ -3,11 +3,11 @@
 using namespace std;
 vector<bool> prime;
 void SieveOfEratosthenes(ll n) {
-    prime.resize(n+1,false);
+    prime.resize(n+1,true);
     prime[0] = false;
     prime[1] = false;
     for (ll p = 2; p * p <= n; p++) {
-        if (prime[p] == true) {
+        if (prime[p]) {
             for (ll i = p * p; i <= n; i += p)
                 prime[i] = false;
         }

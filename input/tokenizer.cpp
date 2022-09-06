@@ -7,7 +7,7 @@ vector<ll> tokenize(string s, string del = " ") {
     vector<ll> ans;
     while (end != -1) {
         ans.emplace_back(stoll(s.substr(start, end - start)));
-        start = end + del.size();
+        start = end + size(del);
         end = s.find(del, start);
     }
     ans.emplace_back(stoll(s.substr(start, end - start)));
