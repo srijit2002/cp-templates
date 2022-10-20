@@ -18,7 +18,7 @@ class SegmentTree {
         if (left <= start && right >= end)
             return tree[node];
         ll mid = start + (end - start) / 2;
-        return max(query(2 * node, left, right, start, mid) , query(2 * node + 1, left, right, mid + 1, end));
+        return min(query(2 * node, left, right, start, mid) , query(2 * node + 1, left, right, mid + 1, end));
     }
 
 

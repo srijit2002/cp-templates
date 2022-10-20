@@ -26,4 +26,7 @@ public:
         }
         return false;
     }
+    bool is_connected(ll a,ll b){
+        return find_parent(a)==find_parent(b);
+    }
 };
