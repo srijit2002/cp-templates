@@ -1,7 +1,7 @@
 #define ll long long int
 #define ld double
 #define color(array, value) memset(array, value, sizeof(array))
-#define size(x) ((ll)x.size())
+#define sz(x) ((ll)x.size())
 #define cerr(x) cout << __LINE__ << " : " << #x << " = " << x << endl
 #define yes cout << "Yes\n"
 #define no cout << "No\n"

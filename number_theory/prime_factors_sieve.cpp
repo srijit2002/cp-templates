@@ -1,10 +1,11 @@
 /**
     @brief sieve function for getting  prime factorization in o(nloglogn)
 */
-vector<ll> sieve_prime_factor;
+const ll N=1e7+1;
+ll sieve_prime_factor[N];
+
 void sieve_prime(ll MAXN = 1e7) {
-    sieve_prime_factor = vector<ll>(MAXN + 1);
-    sieve_prime_factor[1] = 1;
+    sieve_prime_factor[1] = 1ll;
     for (ll i = 2; i <= MAXN; i++) {
         sieve_prime_factor[i] = i;
     }
