@@ -1,9 +1,6 @@
 #define ll long long int
 #define FOR(index, lower, upper) for (ll index = lower; index < upper; index++)
 
-
-
-
 ll binExp(ll base, ll power, ll MOD) {
     ll res = 1;
     while (power) {

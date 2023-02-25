@@ -1,16 +1,15 @@
-//refer to macro.cpp
+// refer to macro.cpp
 class SegmentTree {
-    #define size(x) x.size()
-    vector<ll> data;
+    ll n;
     vector<ll> tree;
-    void build(ll node, ll start, ll end) {
+    void build(ll node, ll start, ll end, vector<ll> &data) {
         if (start == end) {
             tree[node] = data[start];
             return;
         }
         ll mid = start + (end - start) / 2;
-        build(2 * node, start, mid);
-        build(2 * node + 1, mid + 1, end);
+        build(2 * node, start, mid, data);
+        build(2 * node + 1, mid + 1, end, data);
         tree[node] = tree[2 * node] + tree[2 * node + 1];
     }
     ll query(ll node, ll left, ll right, ll start, ll end) {
@@ -36,14 +35,14 @@ class SegmentTree {
     }
 
 public:
-    SegmentTree(const vector<ll> &init) : data(init) {
-        tree.resize(4 * size(init));
-        build(1, 0, size(data) - 1);
+    SegmentTree(vector<ll> &data) : n(sz(data)) {
+        tree.resize(4 * n);
+        build(1, 0, n - 1, data);
     }
     ll query(ll left, ll right) {
-        return query(1, left, right, 0, size(data) - 1);
+        return query(1, left, right, 0, n - 1);
     }
     void update(ll index, ll val) {
-        update(1, index, 0, size(data) - 1, val);
+        update(1, index, 0, n - 1, val);
     }
 };

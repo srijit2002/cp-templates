@@ -1,11 +1,15 @@
-ll root(ll x) {
-	ll l = 0, r = 1e9 + 1;
-	while (l < r - 1) {
-		ll m = (l + r) / 2;
-		if (m * m > x)
-			r = m;
-		else
-			l = m;
-	}
-	return l;
+double root(double _val) {
+    double low = 0; 
+    double high = _val;
+    double mid = 0; 
+
+    for(int i=0;i<100;i++){
+            mid = low + (high - low) / 2; // finding mid value
+            if (mid*mid > _val) {
+                high = mid;
+            } else {
+                low = mid;
+            }    
+    }   
+    return mid;
 }

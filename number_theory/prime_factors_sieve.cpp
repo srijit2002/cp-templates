@@ -1,20 +1,20 @@
 /**
     @brief sieve function for getting  prime factorization in o(nloglogn)
 */
-const ll N=1e7+1;
-ll sieve_prime_factor[N];
+const int N=1e7+1;
+int sieve_prime_factor[N];
 
-void sieve_prime(ll MAXN = 1e7) {
+void sieve_prime(int MAXN = 1e7) {
     sieve_prime_factor[1] = 1ll;
-    for (ll i = 2; i <= MAXN; i++) {
+    for (int i = 2; i <= MAXN; i++) {
         sieve_prime_factor[i] = i;
     }
-    for (ll i = 4; i <= MAXN; i += 2) {
+    for (int i = 4; i <= MAXN; i += 2) {
         sieve_prime_factor[i] = 2;
     }
-    for (ll i = 3; i * i <= MAXN; i++) {
+    for (int i = 3; i * i <= MAXN; i++) {
         if (sieve_prime_factor[i] == i) {
-            for (ll j = i * i; j <= MAXN; j += i)
+            for (int j = i * i; j <= MAXN; j += i)
                 if (sieve_prime_factor[j] == j)
                     sieve_prime_factor[j] = i;
         }
@@ -24,10 +24,14 @@ void sieve_prime(ll MAXN = 1e7) {
  * @brief A O(log n) function returning primefactorization
    by dividing by smallest prime factor at every step
 */
-vector<ll> get_factorization(ll x) {
-    vector<ll> ret;
+vector<pair<int,int>> get_factorization(int x) {
+    vector<pair<int,int>> ret;
     while (x != 1) {
-        ret.push_back(sieve_prime_factor[x]);
+        if (ret.empty() or ret.back().first != sieve_prime_factor[x]) {
+            ret.emplace_back(make_pair(sieve_prime_factor[x], 1));
+        } else {
+            ret.back().second++;
+        }
         x = x / sieve_prime_factor[x];
     }
     return ret;
