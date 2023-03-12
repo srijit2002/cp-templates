@@ -24,7 +24,7 @@
 #define umap unordered_map
 #define uset unordered_set
 #define CASE(x) cout << "Case " << x << ":" << endl;
-#define popcount(x) __builtin_popcount(x)
+#define popcount(x) __builtin_popcountll(x)
 #define pll pair<ll, ll>
 const ll MOD = 1e9 + 7;
 const ll A_MOD = 998244353;
