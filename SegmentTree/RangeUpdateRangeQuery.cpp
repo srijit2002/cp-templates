@@ -3,7 +3,7 @@
  *
  * @tparam T data type of segtree
  * @tparam U data type of lazytree
- * @tparam V data tyype of that value that will be passed in update function
+ * @tparam V data type of that value that will be passed in update function
  */
 template <class T, class U, class V>
 class SegmentTree {
