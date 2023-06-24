@@ -66,8 +66,8 @@ class SegmentTree {
 
 public:
     SegmentTree(int size, T _IDENTITY_ELEMENT) : n(size), IDENTITY_ELEMENT(_IDENTITY_ELEMENT) {
-        lazy.resize(4 * n);
-        tree.resize(4 * n);
+        lazy.resize(4 * n, _IDENTITY_ELEMENT);
+        tree.resize(4 * n, _IDENTITY_ELEMENT);
     }
     SegmentTree(vector<T> &initial_value, T _IDENTITY_ELEMENT) : SegmentTree((int)initial_value.size(), _IDENTITY_ELEMENT) {
         build(1, 0, n - 1, initial_value);

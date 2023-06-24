@@ -10,11 +10,11 @@
 #define color(array, value) memset(array, value, sizeof(array))
 #define colorDD(array, value) fill_n(*array, sizeof(array) / sizeof(**array), value);
 #define sz(x) ((ll)x.size())
-#define cerr(x) cout << #x << " = " << x << endl
-#define YES cout << "YES\n"
-#define NO cout << "NO\n"
-#define Yes cout << "Yes\n"
-#define No cout << "No\n"
+#define cerr(x) std::cout << #x << " = " << x << endl
+#define YES std::cout << "YES\n"
+#define NO std::cout << "NO\n"
+#define Yes std::cout << "Yes\n"
+#define No std::cout << "No\n"
 #define endl "\n"
 #define FOR(index, lower, upper) for (ll index = lower; index < upper; index++)
 #define FORD(index, upper, lower) for (ll index = upper; index > lower; index--)
@@ -23,7 +23,7 @@
 #define containsKey(map, key) (map.find(key) != map.end())
 #define umap unordered_map
 #define uset unordered_set
-#define CASE(x) cout << "Case " << x << ":" << endl;
+#define CASE(x) std::cout << "Case " << x << ":" << endl;
 #define popcount(x) __builtin_popcountll(x)
 #define pll pair<ll, ll>
 const ll MOD = 1e9 + 7;
@@ -112,7 +112,7 @@ struct Point {
 void HUTH() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    cout.tie(NULL);
+    std::cout.tie(NULL);
 #ifndef ONLINE_JUDGE
     freopen("input", "r", stdin);
     freopen("output", "w", stdout);
@@ -128,26 +128,26 @@ istream &operator>>(istream &istream, vector<T> &v) {
         cin >> it;
     return istream;
 }
-template <typename T1, typename T2> // cout << pair<T1, T2>
+template <typename T1, typename T2> // std::cout << pair<T1, T2>
 ostream &operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second); }
-template <typename T> // cout << vector<T>
+template <typename T> // std::cout << vector<T>
 ostream &operator<<(ostream &ostream, const vector<T> &c) {
     ll n = sz(c);
     FOR(i, 0, n) {
-        cout << c[i] << ((i == n - 1) ? "" : " ");
+        std::cout << c[i] << ((i == n - 1) ? "" : " ");
     }
     return ostream;
 }
-template <typename T> // cout << unordered_set<T>
+template <typename T> // std::cout << unordered_set<T>
 ostream &operator<<(ostream &ostream, const unordered_set<T> &c) {
     for (auto &it : c)
-        cout << it << " ";
+        std::cout << it << " ";
     return ostream;
 }
-template <typename T> // cout << ordered_set<T>
+template <typename T> // std::cout << ordered_set<T>
 ostream &operator<<(ostream &ostream, const set<T> &c) {
     for (auto &it : c)
-        cout << it << " ";
+        std::cout << it << " ";
     return ostream;
 }
 istream &operator>>(istream &istream, Point &v) {

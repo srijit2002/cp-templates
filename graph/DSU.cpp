@@ -35,7 +35,7 @@ public:
     int getSize(int a) {
         return size[find_parent(a)];
     }
-    int getNumberOfComponents() {
+    int get_number_of_components() {
         return connected_components;
     }
 };
