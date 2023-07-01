@@ -169,8 +169,8 @@ int main() {
 }
 
 void solve(ll TC) {
+    
 }
-
 /*
  itne me hi thakk gaya vro?
  never compare your failure with other’s success.(which you are doing ri8 now)
@@ -180,5 +180,6 @@ void solve(ll TC) {
  dont put --> n <-- in every for loop
  consider case = 0
 
- Expert before 2023
+  * Expert before 2023
+  * CM before ?
 */
