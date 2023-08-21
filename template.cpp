@@ -169,11 +169,10 @@ int main() {
 }
 
 void solve(ll TC) {
-    
+   
 }
 /*
  itne me hi thakk gaya vro?
- never compare your failure with other’s success.(which you are doing ri8 now)
 
  read question
  rethink your approach
@@ -182,4 +181,9 @@ void solve(ll TC) {
 
   * Expert before 2023
   * CM before ?
+
+    Life gets hard and it gets messed up
+    When you give so much, but it’s not enough
+    When the high’s too high, and the low’s too low
+    When you love someone and they let you go
 */
