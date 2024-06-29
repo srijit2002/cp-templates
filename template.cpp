@@ -30,7 +30,7 @@ const ll MOD = 1e9 + 7;
 const ll A_MOD = 998244353;
 const ld EPS = 1e-7;
 const ld PI = acos(-1.0);
-const ll INF = 1e18;
+const ll INF = 2e18;
 
 /*------------------------------------Policy based data structures-------------------------------------------*/
 using namespace std;
@@ -62,7 +62,7 @@ const ll dy[] = {-1, +1, +0, +0, +1, +1, -1, -1}; // Kings Move
 // const ll dy[] = {-1, 1, -2, 2, -2, 2, -1, 1}; // Knights Move
 /*------------------------------------------------*/
 
-bool isBitSet(ll number, ll bit) {
+bool getBit(ll number, ll bit) {
     return (number & (1ll << bit)) != 0;
 }
 
@@ -182,8 +182,10 @@ void solve(ll TC) {
   * Expert before 2023
   * CM before ?
 
-    Life gets hard and it gets messed up
-    When you give so much, but it’s not enough
-    When the high’s too high, and the low’s too low
-    When you love someone and they let you go
+  Aur poocho na zara
+  Mere din ke bare mein bhi
+  Bas itne mein
+  Sambhal jaun haan
+
+  * Rakh vishwas tu hai shiv ka dass *
 */

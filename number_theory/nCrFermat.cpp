@@ -2,13 +2,12 @@
 #define FOR(index, lower, upper) for (ll index = lower; index < upper; index++)
 
 ll binExp(ll base, ll power, ll MOD) {
-    ll res = 1;
+    ll res = 1 % MOD;
     while (power) {
         if ((power % 2) == 1) {
             res = ((res % MOD) * (base % MOD)) % MOD;
             power--;
-        }
-        else {
+        } else {
             base = ((base % MOD) * (base % MOD)) % MOD;
             power /= 2;
         }
@@ -16,19 +15,18 @@ ll binExp(ll base, ll power, ll MOD) {
     return res;
 }
 
-
-ll modInverse(ll n,ll p) {
+ll modInverse(ll n, ll p) {
     return binExp(n, p - 2, p);
 }
 /**
  * @brief returns nCr % p using fermat's little theorem
- * 
- * @param n 
- * @param r 
- * @param p 
- * @return ll 
+ *
+ * @param n
+ * @param r
+ * @param p
+ * @return ll
  */
-ll nCrModPFermat(ll n, ll r, ll p) {
+ll NCR(ll n, ll r, ll p) {
     if (n < r)
         return 0;
     if (r == 0)

@@ -1,12 +1,11 @@
 #define ll long long int
 ll binExp(ll base, ll power, ll MOD) {
-    ll res = 1;
+    ll res = 1 % MOD;
     while (power) {
         if (power % 2 == 1) {
             res = ((res % MOD) * (base % MOD)) % MOD;
             power--;
-        }
-        else {
+        } else {
             base = ((base % MOD) * (base % MOD)) % MOD;
             power /= 2;
         }

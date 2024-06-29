@@ -57,13 +57,16 @@ public:
         if (u == v)
             return u;
         FORD(i, MAXN - 1, -1) {
-            ll pu = get_ancestor(u, 1ll<<i);
-            ll pv = get_ancestor(v, 1ll<<i);
+            ll pu = get_ancestor(u, 1ll << i);
+            ll pv = get_ancestor(v, 1ll << i);
             if (pu != pv) {
                 u = pu;
                 v = pv;
             }
         }
         return ancestor[0][u];
+    }
+    ll get_dist(ll u, ll v) {
+        return depth[u] + depth[v] - 2 * depth[get_lca(u, v)];
     }
 };

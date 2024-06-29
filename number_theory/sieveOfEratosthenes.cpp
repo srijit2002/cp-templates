@@ -1,15 +1,19 @@
-#include <vector>
-#define ll long long int
-using namespace std;
-vector<bool> prime;
-void SieveOfEratosthenes(ll n) {
-    prime.resize(n+1,true);
-    prime[0] = false;
-    prime[1] = false;
-    for (ll p = 2; p * p <= n; p++) {
-        if (prime[p]) {
-            for (ll i = p * p; i <= n; i += p)
-                prime[i] = false;
+class Sieve {
+    vector<int> sieve; // isPrime or not
+    int n;
+public:
+    Sieve(int _n) : n(_n) {
+        sieve = vector<int>(n + 1, true); // is prime or not
+        sieve[0] = sieve[1] = false;
+        for (int i = 2; i <= n; i++) {
+            if (sieve[i]) {
+                for (int j = i + i; j <= n; j += i) {
+                    sieve[j] = false;
+                }
+            }
         }
     }
-}
+    bool isPrime(int v){
+        return sieve[v];        
+    }
+};
